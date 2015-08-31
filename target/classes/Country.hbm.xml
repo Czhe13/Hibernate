@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.hand.HibernateExam.Country" table="country">
+       <id name="id" type="int" column="country_id">
+         <generator class="increment"/>
+      </id>
+    
+      <property name="country" column="country" type="String"/>
+        <set name="city" inverse="true">
+      		<key column="country_id"></key>
+      		<one-to-many class="com.hand.HibernateExam.City"/>
+      	</set>
+    </class>
+</hibernate-mapping>

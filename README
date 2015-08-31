@@ -1,0 +1,1 @@
+compile&mvn	exec:java	-Dexec.com.hand.HibernateExam="MainApp"

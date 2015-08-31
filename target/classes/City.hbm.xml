@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="com.hand.HibernateExam.City" table="city">
+      <meta attribute="class-description">
+         This class contains the employee detail. 
+      </meta>
+      <id name="id" type="int" column="city_id">
+         <generator class="increment"/>
+      </id>
+      <property name="city" column="city" type="string"/>
+
+       	<!-- 多对一关联映射 -->
+       	<many-to-one name="country" column="country_id"></many-to-one>
+      
+   </class>
+</hibernate-mapping>  
